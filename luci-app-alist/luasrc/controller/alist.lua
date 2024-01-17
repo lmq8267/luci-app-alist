@@ -75,8 +75,8 @@ end
 
 function admin_info()
 	local random = luci.sys.exec("$(uci -q get alist.@alist[0].bin_dir) --data $(uci -q get alist.@alist[0].data_dir) admin set admin 2>&1")
-	local username = string.match(random, "新用户名： (%S+)")
-	local password = string.match(random, "新密码： (%S+)")
+	local username = string.match(random, "username: (%S+)")
+	local password = string.match(random, "password: (%S+)")
 
 	luci.http.prepare_content("application/json")
 	luci.http.write_json({username = username, password = password})
