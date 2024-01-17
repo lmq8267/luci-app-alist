@@ -27,7 +27,7 @@ function alist_status()
                    e.port = (port or 5244)
 		e.running=luci.sys.call("pidof alist >/dev/null")==0
 	
-         local command1 = io.popen("[ -f /tmp/alist ] && start_time=$(cat /tmp/alist_time) && time=$(($(date +%s)-start_time)) && day=$((time/86400)) && [ $day -eq 0 ] && day='' || day=${day}天 && time=$(date -u -d @${time} +'%H小时%M分%S秒') && echo $day $time")
+         local command1 = io.popen("[ -f /tmp/alist_time ] && start_time=$(cat /tmp/alist_time) && time=$(($(date +%s)-start_time)) && day=$((time/86400)) && [ $day -eq 0 ] && day='' || day=${day}天 && time=$(date -u -d @${time} +'%H小时%M分%S秒') && echo $day $time")
                    e.alista = command1:read("*all")
                    command1:close()
                    if e.alista == "" then
