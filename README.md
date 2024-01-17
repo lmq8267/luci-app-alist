@@ -1,6 +1,6 @@
 # luci-app-alist
 
-项目地址：https://github.com/cloudflare/cloudflared
+项目地址：https://github.com/alist-org/alist
 
 此luci-app-alist复制于https://github.com/kiddin9/openwrt-packages/tree/master/luci-app-alist
 
