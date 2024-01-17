@@ -79,7 +79,7 @@ o.default = "0"
 o.rmempty = false
 
 o = s:option(Value, "bin_dir", translate("程序路径"),
-	translate("自定义alist的存放路径,确保填写完整的路径及alist名称，下载alist.ipk后解压出alist二进制文件上传<br>官方二进制程序：<a href='https://github.com/alist-org/alist/releases' target='_blank'>下载地址1</a>&nbsp;&nbsp;&nbsp;IPK安装包：<a href='https://mirrors.vsean.net/openwrt/releases/' target='_blank'>下载地址2</a>&nbsp;&nbsp;&nbsp;<a href='http://mirrors.cloud.tencent.com/lede/' target='_blank'>下载地址3</a>&nbsp;&nbsp;&nbsp;下载对应的版本对应的CPU架构解压"))
+	translate("自定义alist的存放路径,确保填写完整的路径及alist名称，下载alist.ipk后解压出alist二进制文件上传，不能直接安装ipk<br>官方二进制程序：<a href='https://github.com/alist-org/alist/releases' target='_blank'>下载地址1</a>&nbsp;&nbsp;&nbsp;IPK安装包：<a href='https://mirrors.vsean.net/openwrt/releases/' target='_blank'>下载地址2</a>&nbsp;&nbsp;&nbsp;<a href='http://mirrors.cloud.tencent.com/lede/' target='_blank'>下载地址3</a>&nbsp;&nbsp;&nbsp;下载对应的版本对应的CPU架构解压"))
 o.datatype = "string"
 o.placeholder = "/usr/bin/alist"
 
