@@ -35,7 +35,11 @@ jobs:
             body: |
              > ### 编译时间 ：${{ env.build_time }}
 
-           
+               **可从[LEDE仓库](http://mirrors.cloud.tencent.com/lede/) 、[ ImmortalWrt仓库 ](https://mirrors.vsean.net/openwrt/) 找到对应的版本对应的CPU架构**
+               **下载alist.ipk解压二进制程序上传至路由器，不能直接opkg install安装ipk**
+
+               部分固件无法启动，可以尝试设置数据目录为外置存储设备里
+               
             tag_name: ${{ env.tag }}
             files: /opt/openwrt-sdk*/bin/packages/aarch64_generic/base/*
      
