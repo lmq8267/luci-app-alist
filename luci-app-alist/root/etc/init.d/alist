@@ -135,6 +135,7 @@ EOF
 	procd_set_param stderr 0
 	procd_set_param respawn
 	procd_close_instance alist
+        echo `date +%s` > /tmp/alist_time
 }
 
 service_triggers() {
@@ -144,6 +145,7 @@ service_triggers() {
 stop_service() {
 	external_access="deny"
 	set_firewall
+        rm -rf /tmp/alist.tag /tmp/alistnew.tag
 }
 
 reload_service() {
