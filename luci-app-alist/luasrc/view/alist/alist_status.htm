@@ -20,7 +20,7 @@
                        var aliramContent = st.running ? "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "&nbsp;&nbsp;&nbsp;&nbsp;内存占用：" + "<span style='color:#0000CD;'>" + st.aliram + "</span>" : ""; 
                        var alitagContent = st.running ? "<br>" + "当前版本：" + "<span style='color:#CD853F;'>" + st.alitag + "</span>" : ""; 
                        var alinewtagContent = st.running ? "&nbsp;" + "最新版本：" + "<span style='color:#FFA500;'>" + st.alistnewtag + "</span>" : "";
-                      var aliwebContent = st.running ? "<input class=\"cbi-button cbi-button-reload mar-10\" type=\"button\" value=\" <%:打开 Web 界面%> \" onclick=\"window.open('<%=protocol%>" + window.location.hostname + ":" + st.port + "/')\"/>" : "";
+                      var aliwebContent = st.running ? "<input class=\"cbi-button cbi-button-reload mar-10\" type=\"button\" value=\" <%:Web 界面%> \" onclick=\"window.open('<%=protocol%>" + window.location.hostname + ":" + st.port + "/')\"/>" : "";
 tb.innerHTML = "<b><em>Alist " + aliStatus + alistaContent + alicpuContent + aliramContent + alitagContent + alinewtagContent + aliwebContent + "</b></em>";
 			}
 		}
