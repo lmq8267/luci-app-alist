@@ -26,19 +26,23 @@ function alist_status()
 	local port = tonumber(uci:get_first("alist", "alist", "port"))
                    e.port = (port or 5244)
 		e.running=luci.sys.call("pidof alist >/dev/null")==0
-	local tagfile = io.open("/tmp/alist_time", "r")
+
+        local tagfile = io.open("/tmp/alist_time", "r")
         if tagfile then
-        local tagcontent = tagfile:read("*all")
-        tagfile:close()
-        if tagcontent and tagcontent ~= "" and luci.fs.stat("/tmp/alist_time") then
-         local command1 = io.popen("[ -f /tmp/alist_time ] && start_time=$(cat /tmp/alist_time) && time=$(($(date +%s)-start_time)) && day=$((time/86400)) && [ $day -eq 0 ] && day='' || day=${day}天 && time=$(date -u -d @${time} +'%H小时%M分%S秒') && echo $day $time")
-                   e.alista = command1:read("*all")
-                   command1:close()
-                   if e.alista == "" then
-                   e.alista = "unknown"
-                   end
-	end
+	local tagcontent = tagfile:read("*all")
+	tagfile:close()
+	if tagcontent and tagcontent ~= "" then
+        os.execute("start_time=$(cat /tmp/alist_time) && time=$(($(date +%s)-start_time)) && day=$((time/86400)) && [ $day -eq 0 ] && day='' || day=${day}天 && time=$(date -u -d @${time} +'%H小时%M分%S秒') && echo $day $time > /tmp/command_alist 2>&1")
+        local command_output_file = io.open("/tmp/command_alist", "r")
+        if command_output_file then
+            e.alista = command_output_file:read("*all")
+            command_output_file:close()
+	    if e.alista == "" then
+               e.alista = "unknown"
+            end
         end
+	end
+	end
   
          local command2 = io.popen('test ! -z "`pidof alist`" && (top -b -n1 | grep -E "$(pidof alist)" 2>/dev/null | grep -v grep | awk \'{for (i=1;i<=NF;i++) {if ($i ~ /alist/) break; else cpu=i}} END {print $cpu}\')')
                    e.alicpu = command2:read("*all")
