@@ -14,7 +14,7 @@
 			var tb = document.getElementById('alist_status');
 			if (st && tb)  {
 		
-		       var aliStatus = st.running ? "<span style='color:green;'> 运行中</span>" : "<span style='color:red;'> 未运行</span>";
+		       var aliStatus = st.running ? "<span style='color:green;'> 运行中</span><img src='https://www.right.com.cn/forum/data/attachment/album/202401/30/073058is17bcmu7z3nmn2b.gif' width='30px' alt=''>" : "<span style='color:red;'> 未运行</span>";
                        var alistaContent = st.running ? "已运行：" + "<span style='color:#DA70D6;'>" + st.alista + "</span>" : "";    
                        var alicpuContent = st.running ? "<br>" + "CPU占用：" + "<span style='color:#6A5ACD;'>" + st.alicpu + "</span>" : "";  
                        var aliramContent = st.running ? "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "&nbsp;&nbsp;&nbsp;&nbsp;内存占用：" + "<span style='color:#0000CD;'>" + st.aliram + "</span>" : ""; 
