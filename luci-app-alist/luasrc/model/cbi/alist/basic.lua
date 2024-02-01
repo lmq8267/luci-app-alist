@@ -11,6 +11,15 @@ s.anonymous = true
 o = s:option(Flag, "enabled", translate("Enabled"))
 o.rmempty = false
 
+o = s:option(Button, "btnrm", translate("版本"))
+o.inputtitle = translate("检测更新")
+o.description = translate("点击按钮开始检测更新，上方状态栏显示")
+o.inputstyle = "apply"
+o:depends("enabled", "1")
+o.write = function()
+  os.execute("rm -rf /tmp/alist*.tag /tmp/alist*.newtag")
+end
+
 o = s:option(Value, "port", translate("端口"))
 o.datatype = "and(port,min(1))"
 o.rmempty = false
