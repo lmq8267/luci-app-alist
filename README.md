@@ -1,4 +1,12 @@
 # luci-app-alist
+<p align="center">
+<a href="https://github.com/lmq8267/luci-app-alist/releases"><img src="https://img.shields.io/github/downloads/lmq8267/luci-app-alist/total">
+<a href="https://github.com/lmq8267/luci-app-alist/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/lmq8267/luci-app-alist">
+<a href="https://github.com/lmq8267/luci-app-alist/releases/"><img src="https://img.shields.io/github/release/lmq8267/luci-app-alist">
+<a href="https://github.com/lmq8267/luci-app-alist/issues"><img src="https://img.shields.io/github/issues-raw/lmq8267luci-app-alist">
+<a href="https://github.com/lmq8267/luci-app-alist/discussions"><img src="https://img.shields.io/github/discussions/lmq8267/luci-app-alist">
+<a href="GitHub repo size"><img src="https://img.shields.io/github/repo-size/lmq8267/luci-app-alist?color=red&style=flat-square">
+<a href="https://github.com/lmq8267/luci-app-alist/actions?query=workflow%3ABuild"><img src="https://img.shields.io/github/actions/workflow/status/lmq8267/luci-app-alist/build.yml?branch=main" alt="Build status">
 
 项目地址：https://github.com/alist-org/alist
 
